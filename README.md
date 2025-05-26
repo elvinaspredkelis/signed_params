@@ -4,7 +4,15 @@ A small Rails controller concern that allows encoding and decoding parameters. S
 
 `signed_params` are great for generating sharable links and/or mitigating web scrapers.
 
-Battle tested at [Hansa](https://hansahq.com). Developed at [Primevise](https://primevise.com).
+Battle-tested at [Hansa](https://hansahq.com). Developed at [Primevise](https://primevise.com).
+
+<a href="https://rubygems.org/gems/signed_params">
+  <img alt="signed_params GEM Version" src="https://img.shields.io/gem/v/signed_params?color=10b981&include_prereleases&logo=ruby&logoColor=f43f5e">
+</a>
+
+<a href="https://rubygems.org/gems/signed_params">
+  <img alt="signed_params GEM Downloads" src="https://img.shields.io/gem/dt/signed_params?color=10b981&include_prereleases&logo=ruby&logoColor=f43f5e">
+</a>
 
 ---
 
@@ -18,9 +26,7 @@ Simply add the gem to your Gemfile by running the following command
 $ bundle add signed_params
 ```
 
----
-
-#### Add it to your application
+#### Add to application
 
 After you have the gem installed, you include the functionality in `app/controllers/application_controller.rb`:
 
