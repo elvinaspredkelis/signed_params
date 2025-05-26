@@ -1,8 +1,8 @@
 # Signed Params
 
-A small Rails controller concern that allows encoding and decoding parameters. Such parameters are protected against tampering and safe to share with the internet.
+A lightweight library for encoding/decoding Rails request parameters.
 
-`signed_params` are great for generating sharable links and/or mitigating web scrapers.
+`signed_params` are protected against tampering and safe to share with the internet. Great for generating sharable links and/or mitigating web scrapers.
 
 Battle-tested at [Hansa](https://hansahq.com). Developed at [Primevise](https://primevise.com).
 
