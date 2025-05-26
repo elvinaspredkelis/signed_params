@@ -1,10 +1,10 @@
 # Signed Params
 
-A small Rails controller concern that allows encoding and decoding parameters. Such parameters are protected against tamparing and safe to share with the internet.
+A small Rails controller concern that allows encoding and decoding parameters. Such parameters are protected against tampering and safe to share with the internet.
 
-Battle tested at [Hansa](https://hansahq.com)
+`signed_params` are great for generating sharable links and/or mitigating web scrapers.
 
-Developed at [Primevise](https://primevise.com)
+Battle tested at [Hansa](https://hansahq.com). Developed at [Primevise](https://primevise.com).
 
 ---
 
@@ -27,12 +27,48 @@ After you have the gem installed, you include the functionality in `app/controll
 ```ruby
 class ApplicationController < ActionController::Base
   include SignedParams::Concern
-  # ...
 end
 ```
 
 > [!TIP]
 > You can also include the concern only in the controllers you seem fit. Adding the concern to the `ApplicationController` is a "forget about it" approach.
+
+---
+
+## Usage
+
+You can encode your parameters with a `sign_param` helper method. Specify which params you want to decode by specifying them in the `has_signed_params` class method.
+
+#### Example
+
+```ruby
+class RecordsController < ApplicationController
+  has_signed_params :record_ids, only: :index
+
+  def index
+    # The record_ids param is automatically decoded
+    @records = Record.find(params[:record_ids])
+  end
+
+  def new_public_link
+    record_ids = Record.last(8).pluck(:id)
+    encoded_record_ids = sign_params(record_ids)
+    # Your controller action logic that generates shareable public links
+  end
+end
+```
+
+---
+
+## Configuration
+
+`signed_params` uses Rails' [ActiveSupport::MessageVerifier](https://api.rubyonrails.org/classes/ActiveSupport/MessageVerifier.html) under the hood to encode the params. You can adjust the secret used for encoding by adding an initializer.
+
+```ruby
+SignedParams.configure do |config|
+  config.verifier_secret = ENV["SIGNED_PARAMS_ENCODING_SECRET"] || "my-strong-and-private-signing-secret"
+end
+```
 
 ## License
 
