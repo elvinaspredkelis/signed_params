@@ -58,6 +58,9 @@ class RecordsController < ApplicationController
 end
 ```
 
+> [!CAUTION]
+> Avoid exposing sensitive data while using `signed_params`. Your application should still implement proper authentication and authorization.
+
 ---
 
 ## Configuration
