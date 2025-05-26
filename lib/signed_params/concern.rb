@@ -4,6 +4,7 @@ module SignedParams
 
     included do
       class_attribute :signed_param_keys, default: []
+      helper_method :sign_param
     end
 
     class_methods do
@@ -13,11 +14,11 @@ module SignedParams
       end
     end
 
-    private
-
     def sign_param(value)
       signed_params_verifier.generate(value)
     end
+
+    private
 
     def decode_signed_params
       return unless signed_param_keys.length
