@@ -18,4 +18,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir["{lib}/**/*", "LICENCE", "Rakefile", "README.md"]
   end
+
+  spec.add_dependency "actionpack", ">= 6.1"
 end
