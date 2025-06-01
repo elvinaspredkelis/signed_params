@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Elvinas Predkelis"]
   spec.email       = ["elvinas@primevise.com"]
   spec.homepage    = "https://github.com/elvinaspredkelis/signed_params"
-  spec.summary     = "A Rails concern that provides automatic encoding/decoding of signed parameters to prevent tampering"
-  spec.description = "A Rails concern that provides automatic encoding/decoding of signed parameters to prevent tampering"
+  spec.summary     = "A lightweight library for encoding/decoding Rails request parameters."
+  spec.description = "A lightweight library for encoding/decoding Rails request parameters."
   spec.license     = "MIT"
  	spec.required_ruby_version = ">= 3.0.0"
 
