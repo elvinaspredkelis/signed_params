@@ -4,7 +4,7 @@ A lightweight library for encoding/decoding Rails request parameters.
 
 `signed_params` are protected against tampering and safe to share with the internet. Great for generating sharable links and/or mitigating web scrapers.
 
-Battle-tested at [Hansa](https://hansahq.com). Developed at [Primevise](https://primevise.com).
+Battle-tested at [Rinkta](https://rinkta.com). Developed at [Primevise](https://primevise.com).
 
 <a href="https://rubygems.org/gems/signed_params"><img alt="signed_params GEM Version" src="https://img.shields.io/gem/v/signed_params?color=10b981&include_prereleases&logo=ruby&logoColor=f43f5e"></a>
 <a href="https://rubygems.org/gems/signed_params"><img alt="signed_params GEM Downloads" src="https://img.shields.io/gem/dt/signed_params?color=10b981&include_prereleases&logo=ruby&logoColor=f43f5e"></a>
